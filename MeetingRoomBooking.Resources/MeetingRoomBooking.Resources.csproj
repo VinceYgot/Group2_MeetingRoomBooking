@@ -7,17 +7,17 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Update="Views\Screen.Designer.cs">
+    <Compile Update="Views\Screens.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
-      <DependentUpon>Screen.resx</DependentUpon>
+      <DependentUpon>Screens.resx</DependentUpon>
     </Compile>
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="Views\Screen.resx">
+    <EmbeddedResource Update="Views\Screens.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Screen.Designer.cs</LastGenOutput>
+      <LastGenOutput>Screens.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
 

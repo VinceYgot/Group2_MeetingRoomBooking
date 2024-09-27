@@ -11,8 +11,13 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace MeetingRoomBooking.WebApp.Controllers {
     public class AccountController : Controller {
+
         public IActionResult Index() {
-            return View();
+            return View("~/");
+        }
+
+        public IActionResult Login() {
+            return View("~/Views/Account/Login.cshtml");
         }
     }
 }
