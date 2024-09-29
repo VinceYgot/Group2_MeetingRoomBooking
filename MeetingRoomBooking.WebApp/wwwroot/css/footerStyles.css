@@ -1,1 +1,25 @@
-﻿
+﻿.foot {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    padding: 10px 0;
+    font-family: var(--primary-font-style);
+    font-weight: 400;
+    font-size: 16px;
+    box-shadow: 0px -38px 55px 11px rgba(255,255,255,0.75);
+}
+
+.foot-item {
+    flex: 1;
+}
+
+.middle-item {
+    flex: 2;
+    display: flex;
+    justify-content: center;
+}
+
+    .middle-item a {
+        margin: 5px 10px;
+    }
