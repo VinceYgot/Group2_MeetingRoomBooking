@@ -1,4 +1,10 @@
 ﻿@model LoginViewModel
+@section style {
+    <link rel="stylesheet" href="~/css/login.css" />
+}
+@section script {
+    <script src="~/js/login.js"></script>
+}
 @{
     ViewData["Title"] = "Login Page";
 }
@@ -18,7 +24,7 @@
             </div>
             <div class="input-section">
                 <div class="password-label">
-                    <div>Your password</div>
+                    <div class="label">Your password</div>
                     <span class="icon-toggle" id="toggle-password">
                         <i class="bi bi-eye" id="toggle-icon"></i>
                         <div id="word-toggle">Show</div>
@@ -26,7 +32,7 @@
                 </div>
                 <input type="password" class="input-text" id="password" name="Password" />
             </div>
-            <button type="submit">Log in</button>
+            <button type="submit" asp-controller="Home" asp-action="Index">Log in</button>
             <div class="extra-text">By continuing, you agree to the <a href="#">Terms of use</a> and <a href="#">Privacy Policy</a></div>
             <div class="forgot-pass">
                 <a href="#" class="extra-text">Forgot your password?</a>
@@ -35,149 +41,4 @@
     </form>
 </div>
 
-<style>
-    html, body {
-        height: 100%;
-        margin: 0;
-    }
 
-    .signin-bg {
-        flex: 1;
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        margin: 0;
-        background-image: url('/assets/index-bg.jpg');
-        background-size: cover;
-        background-position: center;
-    }
-    .title {
-        display: flex;
-        align-items: center;
-    }
-    .title h2 {
-        margin: 0;
-    }
-
-    .logo {
-        margin-right: 10px;
-    }
-    form {
-        width: 40%;
-        border: 1px solid black;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding: 50px;
-        border-radius: 20px;
-        margin-top: 2em;
-        background: rgba(255, 2555, 255, 0.24);
-    }
-
-        form * {
-            font-family: "Poppins", sans-serif;
-        }
-
-    .input-area, .input-section {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin-top: 15px;
-    }
-
-    .input-text {
-        width: 100%;
-        border-radius: 10px;
-        border: 1px solid #666666;
-        height: 45px;
-        padding: 10px;
-        
-    }
-    input {
-        background-color: transparent;
-    }
-    .input-text:focus {
-        outline: none;
-    }
-
-    a {
-        color: #333;
-    }
-
-    .password-label {
-        width: 100%;
-        display: flex;
-        justify-content: space-between;
-    }
-
-    .label, .password-label {
-        width: 100%;
-        font-size: 12px;
-    }
-
-    button {
-        border: none;
-        background-color: #549CC5;
-        color: white;
-        font-weight: 500;
-        font-size: 17px;
-        width: 100%;
-        margin: 30px 0;
-        padding: 10px;
-        border-radius: 50px;
-    }
-
-    .form-title {
-        font-size: 26px;
-    }
-
-    .extra-text {
-        font-size: 12px;
-    }
-
-    .forgot-pass {
-        width: 100%;
-        display: flex;
-        justify-content: flex-end;
-    }
-    .icon-toggle {
-        font-size: 20px;
-        color: #666666;
-        display: flex;
-        justify-content: space-between;
-        width: 14%;
-        align-items: center;
-    }
-    #word-toggle {
-        user-select: none;
-        font-size: 16px;
-    }
-</style>
-
-<script>
-    document.getElementById('toggle-password').addEventListener('click', function () {
-        // Toggle the icon and word
-        const icon = document.getElementById('toggle-icon');
-        const word = document.getElementById('word-toggle');
-        const passwordInput = document.getElementById('password');
-
-        if (icon.classList.contains('bi-eye')) {
-            // Change the icon to 'eye-slash' and the word to 'Hide'
-            icon.classList.replace('bi-eye', 'bi-eye-slash');
-            word.textContent = 'Hide';
-
-            // Show the password
-            passwordInput.type = 'text';
-        } else {
-            // Change the icon back to 'eye' and the word to 'Show'
-            icon.classList.replace('bi-eye-slash', 'bi-eye');
-            word.textContent = 'Show';
-
-            // Hide the password
-            passwordInput.type = 'password';
-        }
-    });
-</script>

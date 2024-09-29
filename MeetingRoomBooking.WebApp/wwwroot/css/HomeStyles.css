@@ -125,3 +125,15 @@ i {
     color: white;
     font-size: 14px;
 }
+
+@media (max-width: 600px) {
+    .middle-header {
+        display: none;
+    }
+    .right-header {
+        margin-right: 5px;
+    }
+    .content {
+        padding: 15px;
+    }
+}
