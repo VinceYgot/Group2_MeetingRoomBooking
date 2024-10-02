@@ -31,12 +31,13 @@
 
 form {
     width: 40%;
+    min-width: 300px;
     max-width: 450px;
     border: 1px solid black;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 50px;
+    padding: 30px;
     border-radius: 20px;
     margin-top: 2em;
     background: rgba(255, 2555, 255, 0.24);
