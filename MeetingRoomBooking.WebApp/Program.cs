@@ -1,4 +1,9 @@
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using MeetingRoomBooking.WebApp.Data;
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddDbContext<MeetingRoomBookingWebAppContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("MeetingRoomBookingWebAppContext") ?? throw new InvalidOperationException("Connection string 'MeetingRoomBookingWebAppContext' not found.")));
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
